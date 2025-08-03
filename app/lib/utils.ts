@@ -1,3 +1,7 @@
+import type { ClassArray } from "clsx";
+import clsx from "clsx";
+import { twMerge } from "tw-merge";
+
 export const formatBytes = (bytes: number) => {
   if (!+bytes) return "0 Bytes";
 
@@ -11,4 +15,8 @@ export const formatBytes = (bytes: number) => {
 
 export const generateUUID = () => {
   return crypto.randomUUID();
+};
+
+export const cn = (...classes: ClassArray) => {
+  return twMerge(clsx(classes));
 };
